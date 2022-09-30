@@ -1,0 +1,31 @@
+.row{
+    position: relative;
+    display: flex;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #0a0a0a;
+    padding: 20px;
+    border-radius: 0px;
+    margin: 10px 10px;
+    padding: 20px;
+    border-color: beige;
+    color: beige;
+}
+.mat-card {
+    border-radius: 0px;
+    margin: 10px 10px;
+    padding: 20px;
+    border-color: beige;
+    color: beige;
+    background-color: black;
+}
+.mat-card#first-card {
+    padding: 0;
+    
+}
+.btn{
+    color: black;
+}
+.texto{
+    color: aliceblue;
+}

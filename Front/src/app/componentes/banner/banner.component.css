@@ -1,0 +1,18 @@
+.mat-card {
+    border-radius: 0px;
+    margin: 10px 10px;
+    padding: 20px;
+    border-color: rgb(223, 220, 245);
+    color: rgb(220, 226, 245);
+    background-color: black;
+}
+.mat-card#first-card {
+    padding: 0;
+    
+}
+.btn{
+    color: black;
+}
+.texto{
+    color: aliceblue;
+}

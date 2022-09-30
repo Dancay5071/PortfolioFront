@@ -1,0 +1,34 @@
+<div class="card mat-card">
+    <div id="proyect">
+        <div class="card-titles">
+            <h2>Proyectos: <button type="button" class="btn btn-dark" routerLink="/nuevoproy" *ngIf="isLogged">
+                <i class="bi bi-plus-square" style="color: white;"></i>
+            </button></h2>
+            
+         </div>
+         
+</div>
+
+<div class="col lg 1"></div>
+<div class="col-lg-11">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let Proyecto of proyecto">
+                <td class="texto">
+                    <h4>{{Proyecto.nombreE}}</h4>
+                </td>
+                <td class="texto">{{Proyecto.descripcionE}}</td>
+                <td *ngIf="isLogged">
+                    <button class="btn btn-light" routerLink="/editproy/{{Proyecto.id}}">
+                        <i class="bi bi-pencil"></i></button>
+                </td>
+                <td *ngIf="isLogged">
+                    <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                        <i class="bi bi-x-square"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+

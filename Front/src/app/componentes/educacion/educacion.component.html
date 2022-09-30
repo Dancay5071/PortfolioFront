@@ -1,0 +1,33 @@
+<div class="card mat-card">
+    <div id="education">
+        <div class="card-titles">
+            <h2>Educación: <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+                <i class="bi bi-plus-square" style="color: white;"></i>
+            </button></h2>
+            
+         </div>
+         
+</div>
+
+<div class="col lg 1"></div>
+<div class="col-lg-11">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let Educacion of educacion">
+                <td class="texto">
+                    <h4>{{Educacion.nombreE}}</h4>
+                </td>
+                <td class="texto">{{Educacion.descripcionE}}</td>
+                <td *ngIf="isLogged">
+                    <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                        <i class="bi bi-pencil"></i></button>
+                </td>
+                <td *ngIf="isLogged">
+                    <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                        <i class="bi bi-x-square"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

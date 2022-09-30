@@ -1,0 +1,18 @@
+footer{
+    color: #fefefe;
+    font-size: 14px;
+    display: flex;
+    margin-left: 375px;
+}
+.mat-card {
+    border-radius: 0px;
+    margin: 10px 10px;
+    padding: 20px;
+    border-color: beige;
+    color: beige;
+    background-color: black;
+}
+.mat-card#first-card {
+    padding: 0;
+    
+}
