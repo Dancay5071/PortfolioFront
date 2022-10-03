@@ -2,7 +2,8 @@ footer{
     color: #fefefe;
     font-size: 14px;
     display: flex;
-    margin-left: 375px;
+    flex-direction: column;
+    text-align: center;
 }
 .mat-card {
     border-radius: 0px;
@@ -16,3 +17,4 @@ footer{
     padding: 0;
     
 }
+
