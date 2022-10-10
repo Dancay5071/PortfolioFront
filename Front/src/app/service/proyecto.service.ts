@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proyecto } from '../model/proyecto';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
-  URL = 'https://backenddac.herokuapp.com/proyecto/';
+  URL = environment.URL + 'proyecto/';
 
   constructor(private httpClient : HttpClient) { }
 

@@ -1,6 +1,5 @@
-body{
-    color: #011718;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .username input{
     width: 100%;
     padding: 0 5px;

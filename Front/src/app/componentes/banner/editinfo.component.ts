@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Banner } from 'src/app/model/banner';
-import { BannerService } from 'src/app/service/banner.service';
+import { persona } from 'src/app/model/persona.model';
+import { ImageService } from 'src/app/service/image.service';
+import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
   selector: 'app-editinfo',
@@ -9,19 +10,20 @@ import { BannerService } from 'src/app/service/banner.service';
   styleUrls: ['./editinfo.component.css']
 })
 export class EditinfoComponent implements OnInit {
-  banner: Banner  = null;
+  persona: persona  = null;
   
   constructor(
-    private bannerS: BannerService,
     private activatedRouter : ActivatedRoute,
-    private router: Router
+    private personaService: PersonaService,
+    private router: Router,
+    public imageService: ImageService
   ) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.bannerS.detail(id).subscribe(
+    this.personaService.detail(id).subscribe(
       data =>{
-        this.banner = data;
+        this.persona = data;
       }, err =>{
          alert("Error al modificar");
          this.router.navigate(['']);
@@ -31,7 +33,8 @@ export class EditinfoComponent implements OnInit {
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
-    this.bannerS.update(id, this.banner).subscribe(
+    this.persona.img = this.imageService.url
+    this.personaService.update(id, this.persona).subscribe(
       data => {
         this.router.navigate(['']);
       }, err => {
@@ -39,5 +42,10 @@ export class EditinfoComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+  }
+  uploadImage($event:any){
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "perfil_" + id;
+    this.imageService.uploadImage($event, name)
   }
 }

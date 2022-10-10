@@ -1,36 +1,19 @@
 <div class="card mat-card" id="first-card" >
     <div id="banner"><img src="/assets/imagenes/banner.jpg" alt=""></div>
+    
     <div id="info" style="padding: 16px">
         <div id="info-img" class="d-grid gap-2 d-md-block">
-            <img class="profile-image" src="/assets/imagenes/foto.jpg" >
+            <img class="profile-image" src={{persona.img}} >
+            <button class="btn btn-light" routerLink="/editinfo/1" *ngIf="isLogged" >
+                <i class="bi bi-pencil"></i></button>
    </div> 
    <div id="info-data" class="row g-0" >
     <div class="col-6 col-md-4">
         <h1 id="nombre">{{persona.nombre}} {{persona.apellido}}</h1>
     </div>
     <div class="col-sm-6 col-md-8">
-        <h2>Acerca de: <button type="button" class="btn btn-dark" routerLink="/newinfo" *ngIf="isLogged">
-            <i class="bi bi-plus-square" style="color: white;"></i>
-        </button></h2>
-    
-        <table class="table">
-            <tbody>
-                <tr *ngFor="let Banner of banner">
-                    <td class="texto">
-                        <h4>{{Banner.nombreE}}</h4>
-                    </td>
-                    <td class="texto">{{Banner.descripcionE}}</td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-light" routerLink="/editinfo/{{Banner.id}}">
-                            <i class="bi bi-pencil"></i></button>
-                    </td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-danger" (click)="delete(Banner.id)">
-                            <i class="bi bi-x-square"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <h2>Acerca de mi</h2>
+        <p>{{persona.descripcion}}</p>
     </div>
 </div>
 </div>

@@ -10,7 +10,6 @@ import { NewproyectoComponent } from './componentes/proyecto/newproyecto.compone
 import { EditproyectoComponent } from './componentes/proyecto/editproyecto.component';
 import { EditSkillComponent } from './componentes/hys/edit-skill.component';
 import { NewSkillComponent } from './componentes/hys/new-skill.component';
-import { NewinfoComponent } from './componentes/banner/newinfo.component';
 import { EditinfoComponent } from './componentes/banner/editinfo.component';
 
 
@@ -25,7 +24,6 @@ const routes: Routes = [
   {path: 'editproy/:id', component: EditproyectoComponent},
   { path: 'newskill', component: NewSkillComponent},
   { path: 'editskill/:id', component: EditSkillComponent},
-  {path: 'newinfo', component: NewinfoComponent},
   {path: 'editinfo/:id', component: EditinfoComponent}
 ];
 
